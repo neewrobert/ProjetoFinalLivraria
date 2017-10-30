@@ -6,13 +6,110 @@
     android:layout_height="match_parent"
     tools:context="br.com.casadocodigo.livrariacasadocodigo.LoginActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="381dp"
+        android:layout_height="99dp"
+        app:srcCompat="@drawable/LogoCasaDoCodigo600x175"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
+
     <TextView
+        android:id="@+id/login_lblLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Login"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/login_txtEmail"
+        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintVertical_bias="0.957" />
+
+    <EditText
+        android:id="@+id/login_txtEmail"
+        android:layout_width="321dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="210dp" />
+
+    <TextView
+        android:id="@+id/login_lblSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senha:"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/login_txtEmail"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/login_txtSenha"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/login_txtSenha"
+        android:layout_width="321dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="293dp" />
+
+
+    <Button
+        android:id="@+id/login_btnEntrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrar"
+        android:layout_marginLeft="36dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp" />
+
+    <Button
+        android:id="@+id/login_btnSair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sair"
+        android:layout_marginTop="47dp"
+        app:layout_constraintTop_toBottomOf="@+id/login_btnEsqSenha"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/login_btnEntrar"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.948" />
+
+    <Button
+        android:id="@+id/login_btnEsqSenha"
+        android:layout_width="206dp"
+        android:layout_height="35dp"
+        android:text="Esqueci a senha...
+"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/login_txtSenha"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/login_btnEntrar"
+        app:layout_constraintVertical_bias="0.277" />
 
 </android.support.constraint.ConstraintLayout>
