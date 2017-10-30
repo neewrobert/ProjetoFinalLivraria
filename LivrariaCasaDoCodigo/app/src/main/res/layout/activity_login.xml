@@ -10,7 +10,7 @@
         android:id="@+id/imageView"
         android:layout_width="381dp"
         android:layout_height="99dp"
-        app:srcCompat="@drawable/LogoCasaDoCodigo600x175"
+        app:srcCompat="@drawable/logocasacodigo"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
