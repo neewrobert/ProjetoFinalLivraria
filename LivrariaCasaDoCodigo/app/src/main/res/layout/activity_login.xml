@@ -6,21 +6,6 @@
     android:layout_height="match_parent"
     tools:context="br.com.casadocodigo.livrariacasadocodigo.LoginActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="356dp"
-        android:layout_height="89dp"
-        app:srcCompat="@drawable/logocasacodigo"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/login_lblLogin"
-        app:layout_constraintVertical_bias="0.195" />
-
     <TextView
         android:id="@+id/login_lblLogin"
         android:layout_width="wrap_content"
@@ -49,8 +34,8 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
-        android:layout_marginTop="79dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        android:layout_marginTop="86dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
     <TextView
         android:id="@+id/login_lblSenha"
@@ -134,6 +119,25 @@
         android:layout_marginBottom="151dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.996" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/login_imgBtnHome"
+        android:layout_width="357dp"
+        android:layout_height="104dp"
+        app:srcCompat="@drawable/logocasacodigo"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:background="@drawable/logocasacodigo"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="6dp"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.025" />
 
 </android.support.constraint.ConstraintLayout>
