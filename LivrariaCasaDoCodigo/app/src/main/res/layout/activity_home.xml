@@ -1,0 +1,171 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="br.com.casadocodigo.livrariacasadocodigo.HomeActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/home_barraTarefas"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorBar"
+                android:elevation="4dp"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom|end"
+
+            android:layout_margin="@dimen/fab_margin"
+            app:backgroundTint="@color/colorButton"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <ImageView
+            android:id="@+id/adm_icCatalogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:srcCompat="@mipmap/ic_catalogo"
+            android:layout_below="@+id/appBarLayout3"
+            android:layout_alignLeft="@+id/adm_icAdmDados"
+            android:layout_alignStart="@+id/adm_icAdmDados" />
+
+        <Button
+            android:id="@+id/adm_btnCatalogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/fab"
+            android:layout_alignRight="@+id/fab"
+            android:layout_alignTop="@+id/adm_icCatalogo"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_toRightOf="@+id/adm_icCatalogo"
+            android:background="@color/colorBlank"
+            android:elevation="2dp"
+            android:shadowColor="@color/colorButton"
+            android:text="Catalogo de Livros"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/adm_icAdmDados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_dados"
+            android:layout_alignTop="@+id/adm_btnAlterarSenhadmDados"
+            android:layout_alignLeft="@+id/adm_icAlterarSenha"
+            android:layout_alignStart="@+id/adm_icAlterarSenha" />
+
+        <Button
+            android:id="@+id/adm_btnAlterarSenhadmDados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlank"
+            android:elevation="2dp"
+            android:shadowColor="@color/colorButton"
+            android:text="Administracao dos Dados"
+            android:textSize="16sp"
+            android:layout_below="@+id/adm_btnCatalogo"
+            android:layout_alignRight="@+id/adm_btnCatalogo"
+            android:layout_alignEnd="@+id/adm_btnCatalogo"
+            android:layout_marginTop="27dp"
+            android:layout_alignLeft="@+id/adm_btnCatalogo"
+            android:layout_alignStart="@+id/adm_btnCatalogo" />
+
+        <ImageView
+            android:id="@+id/adm_icAlterarSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_password"
+            android:layout_above="@+id/adm_btnSobreEquipe"
+            android:layout_alignLeft="@+id/adm_imgSobre"
+            android:layout_alignStart="@+id/adm_imgSobre" />
+
+        <Button
+            android:id="@+id/adm_btnAlterarSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlank"
+            android:elevation="2dp"
+            android:shadowColor="@color/colorButton"
+            android:text="Alterar senha do Usuario"
+            android:textSize="16sp"
+            android:layout_marginTop="29dp"
+            android:layout_below="@+id/adm_icAdmDados"
+            android:layout_alignRight="@+id/adm_btnAlterarSenhadmDados"
+            android:layout_alignEnd="@+id/adm_btnAlterarSenhadmDados"
+            android:layout_alignLeft="@+id/adm_btnAlterarSenhadmDados"
+            android:layout_alignStart="@+id/adm_btnAlterarSenhadmDados" />
+
+        <ImageView
+            android:id="@+id/adm_imgSobre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:layout_alignTop="@+id/adm_btnSobreEquipe"
+            android:layout_alignLeft="@+id/adm_imgSair"
+            android:layout_alignStart="@+id/adm_imgSair" />
+
+        <Button
+            android:id="@+id/adm_btnSobreEquipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlank"
+            android:elevation="2dp"
+            android:shadowColor="@color/colorButton"
+            android:text="Sobre a equipe de desenvolvimento"
+            android:layout_marginTop="38dp"
+            android:layout_below="@+id/adm_btnAlterarSenha"
+            android:layout_alignLeft="@+id/adm_btnAlterarSenha"
+            android:layout_alignStart="@+id/adm_btnAlterarSenha"
+            android:layout_alignRight="@+id/adm_btnAlterarSenha"
+            android:layout_alignEnd="@+id/adm_btnAlterarSenha" />
+
+        <ImageView
+            android:id="@+id/adm_imgSair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_sair"
+            android:layout_alignTop="@+id/adm_btnSair"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp" />
+
+        <Button
+            android:id="@+id/adm_btnSair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlank"
+            android:elevation="2dp"
+            android:shadowColor="@color/colorButton"
+            android:text="Sair da Aplicacao"
+            android:layout_marginTop="35dp"
+            android:layout_below="@+id/adm_btnSobreEquipe"
+            android:layout_alignRight="@+id/adm_btnSobreEquipe"
+            android:layout_alignEnd="@+id/adm_btnSobreEquipe"
+            android:layout_alignLeft="@+id/adm_btnSobreEquipe"
+            android:layout_alignStart="@+id/adm_btnSobreEquipe" />
+
+    </android.widget.RelativeLayout>
+</ScrollView>

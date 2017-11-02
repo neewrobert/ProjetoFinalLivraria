@@ -1,143 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.casadocodigo.livrariacasadocodigo.LoginActivity">
+    android:background="@color/colorBlank"
+    tools:context="br.com.casadocodigo.livrariacasadocodigo.LoginActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
-    <TextView
-        android:id="@+id/login_lblLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        android:layout_marginBottom="7dp"
-        app:layout_constraintBottom_toTopOf="@+id/login_txtEmail"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="1.0" />
+    <ImageButton
+        android:id="@+id/login_imagemTop"
+        android:layout_width="346dp"
+        android:layout_height="106dp"
+        app:srcCompat="@drawable/casa_codigo_logo"
+        android:scaleType="fitCenter"
+        android:background="@color/colorBlank"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="19dp"
+        android:layout_above="@+id/login_txtEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp" />
 
     <EditText
         android:id="@+id/login_txtEmail"
-        android:layout_width="321dp"
-        android:layout_height="41dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        android:layout_marginTop="86dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-    <TextView
-        android:id="@+id/login_lblSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Senha:"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/login_txtEmail"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/login_txtSenha"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintVertical_bias="1.0" />
+        tools:layout_editor_absoluteY="167dp"
+        tools:layout_editor_absoluteX="85dp"
+        android:layout_above="@+id/login_txtSenha"
+        android:layout_alignLeft="@+id/login_txtSenha"
+        android:layout_alignStart="@+id/login_txtSenha"
+        android:layout_marginBottom="67dp" />
 
     <EditText
         android:id="@+id/login_txtSenha"
-        android:layout_width="321dp"
-        android:layout_height="43dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
-        android:layout_marginTop="44dp"
-        app:layout_constraintTop_toBottomOf="@+id/login_txtEmail"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/login_btnEsqSenha"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintVertical_bias="0.0" />
-
+        tools:layout_editor_absoluteY="263dp"
+        tools:layout_editor_absoluteX="85dp"
+        android:layout_above="@+id/login_linkEsqueci"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp" />
 
     <Button
-        android:id="@+id/login_btnEntrar"
+        android:id="@+id/loging_btnEntrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Entrar"
-        android:layout_marginLeft="32dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/login_btnEsqSenha"
-        app:layout_constraintVertical_bias="0.53"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.027" />
+        tools:layout_editor_absoluteY="400dp"
+        tools:layout_editor_absoluteX="16dp"
+        android:layout_alignTop="@+id/login_btnCadastrar"
+        android:layout_alignLeft="@+id/login_imagemTop"
+        android:layout_alignStart="@+id/login_imagemTop"
+        android:layout_marginBottom="31dp"/>
 
     <Button
-        android:id="@+id/login_btnSair"
+        android:id="@+id/longin_btnSair"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sair"
-        android:layout_marginTop="11dp"
-        app:layout_constraintTop_toBottomOf="@+id/login_btnEsqSenha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/login_btnEntrar"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintHorizontal_bias="0.856"
-        app:layout_constraintVertical_bias="0.514" />
+        tools:layout_editor_absoluteY="400dp"
+        tools:layout_editor_absoluteX="280dp"
+        android:layout_alignBottom="@+id/loging_btnEntrar"
+        android:layout_alignRight="@+id/login_imagemTop"
+        android:layout_alignEnd="@+id/login_imagemTop" />
+
+    <TextView
+        android:id="@+id/login_linkEsqueci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esqueci a Senha..."
+        android:autoLink="none"
+        tools:layout_editor_absoluteY="341dp"
+        tools:layout_editor_absoluteX="266dp"
+        android:layout_above="@+id/longin_btnSair"
+        android:layout_alignRight="@+id/longin_btnSair"
+        android:layout_alignEnd="@+id/longin_btnSair"
+        android:layout_marginBottom="54dp" />
 
     <Button
-        android:id="@+id/login_btnEsqSenha"
-        android:layout_width="206dp"
-        android:layout_height="35dp"
-        android:text="Esqueci a senha...
-"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="151dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="1.0" />
+        android:id="@+id/login_btnCadastrar"
+        android:layout_width="115dp"
+        android:layout_height="42dp"
+        android:text="Cadastrar"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="400dp"
+        android:layout_marginBottom="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/login_linkEsqueci"
+        android:layout_toStartOf="@+id/login_linkEsqueci" />
 
-    <ImageButton
-        android:id="@+id/login_imgBtnHome"
-        android:layout_width="357dp"
-        android:layout_height="104dp"
-        app:srcCompat="@drawable/logocasacodigo"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
-        android:background="@drawable/logocasacodigo"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="6dp"
-        app:layout_constraintHorizontal_bias="0.272"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.025" />
-
-</android.support.constraint.ConstraintLayout>
+</android.widget.RelativeLayout>
