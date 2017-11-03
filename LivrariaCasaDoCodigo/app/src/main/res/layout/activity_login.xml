@@ -1,18 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.casadocodigo.livrariacasadocodigo.LoginActivity">
+    android:background="@color/colorBlank"
+    tools:context="br.com.casadocodigo.livrariacasadocodigo.LoginActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
-    <TextView
+    <ImageButton
+        android:id="@+id/login_imagemTop"
+        android:layout_width="346dp"
+        android:layout_height="106dp"
+        app:srcCompat="@drawable/casa_codigo_logo"
+        android:scaleType="fitCenter"
+        android:background="@color/colorBlank"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="19dp"
+        android:layout_above="@+id/login_txtEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp" />
+
+    <EditText
+        android:id="@+id/login_txtEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteY="167dp"
+        tools:layout_editor_absoluteX="85dp"
+        android:layout_above="@+id/login_txtSenha"
+        android:layout_alignLeft="@+id/login_txtSenha"
+        android:layout_alignStart="@+id/login_txtSenha"
+        android:layout_marginBottom="67dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/login_txtSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteY="263dp"
+        tools:layout_editor_absoluteX="85dp"
+        android:layout_above="@+id/login_linkEsqueci"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/loging_btnEntrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrar"
+        tools:layout_editor_absoluteY="400dp"
+        tools:layout_editor_absoluteX="16dp"
+        android:layout_alignTop="@+id/login_btnCadastrar"
+        android:layout_alignLeft="@+id/login_imagemTop"
+        android:layout_alignStart="@+id/login_imagemTop"
+        android:layout_marginBottom="31dp"/>
+
+    <Button
+        android:id="@+id/longin_btnSair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sair"
+        tools:layout_editor_absoluteY="400dp"
+        tools:layout_editor_absoluteX="280dp"
+        android:layout_alignBottom="@+id/loging_btnEntrar"
+        android:layout_alignRight="@+id/login_imagemTop"
+        android:layout_alignEnd="@+id/login_imagemTop" />
+
+    <TextView
+        android:id="@+id/login_linkEsqueci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esqueci a Senha..."
+        android:autoLink="none"
+        tools:layout_editor_absoluteY="341dp"
+        tools:layout_editor_absoluteX="266dp"
+        android:layout_above="@+id/longin_btnSair"
+        android:layout_alignRight="@+id/longin_btnSair"
+        android:layout_alignEnd="@+id/longin_btnSair"
+        android:layout_marginBottom="54dp" />
+
+    <Button
+        android:id="@+id/login_btnCadastrar"
+        android:layout_width="115dp"
+        android:layout_height="42dp"
+        android:text="Cadastrar"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="400dp"
+        android:layout_marginBottom="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/login_linkEsqueci"
+        android:layout_toStartOf="@+id/login_linkEsqueci" />
+
+</android.widget.RelativeLayout>

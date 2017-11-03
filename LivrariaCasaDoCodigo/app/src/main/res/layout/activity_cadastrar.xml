@@ -1,0 +1,111 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.casadocodigo.livrariacasadocodigo.CadastrarActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/login_barraTarefas"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorBar"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <EditText
+        android:id="@+id/cadastrar_txtNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nome"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp"
+        android:layout_below="@+id/login_barraTarefas"
+        android:layout_toRightOf="@+id/cadastrar_icNome"
+        android:layout_toEndOf="@+id/cadastrar_icNome" />
+
+    <ImageView
+        android:id="@+id/cadastrar_icNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        app:srcCompat="@android:drawable/ic_menu_my_calendar"
+        android:layout_alignTop="@+id/cadastrar_txtNome"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/cadastrar_icEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        android:layout_below="@+id/cadastrar_icNome"
+        android:layout_alignLeft="@+id/cadastrar_icNome"
+        android:layout_alignStart="@+id/cadastrar_icNome" />
+
+    <EditText
+        android:id="@+id/cadastrar_txtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:layout_alignTop="@+id/cadastrar_icEmail"
+        android:layout_alignLeft="@+id/cadastrar_txtNome"
+        android:layout_alignStart="@+id/cadastrar_txtNome" />
+
+    <EditText
+        android:id="@+id/cadastrar_senha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cadastrar_txtEmail"
+        android:layout_alignStart="@+id/cadastrar_txtEmail"
+        android:layout_below="@+id/cadastrar_txtEmail"
+        android:layout_marginTop="67dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword" />
+
+    <ImageView
+        android:id="@+id/cadastrar_icSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_lock_idle_lock"
+        android:layout_alignTop="@+id/cadastrar_senha"
+        android:layout_alignLeft="@+id/cadastrar_icEmail"
+        android:layout_alignStart="@+id/cadastrar_icEmail" />
+
+    <EditText
+        android:id="@+id/cadastrar_senhaConfir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Confirmar Senha"
+        android:inputType="textPassword"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/cadastrar_senha"
+        android:layout_alignLeft="@+id/cadastrar_senha"
+        android:layout_alignStart="@+id/cadastrar_senha" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_lock_idle_lock"
+        android:layout_alignTop="@+id/cadastrar_senhaConfir"
+        android:layout_alignLeft="@+id/cadastrar_icSenha"
+        android:layout_alignStart="@+id/cadastrar_icSenha" />
+
+</android.widget.RelativeLayout>
+</ScrollView>
