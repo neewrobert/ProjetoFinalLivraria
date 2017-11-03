@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.casadocodigo.livrariacasadocodigo.Dao.UsuarioDao;
@@ -17,6 +18,8 @@ import br.com.casadocodigo.livrariacasadocodigo.Helper.CadastrarHelper;
 public class CadastrarActivity extends AppCompatActivity {
 
     private CadastrarHelper helper;
+    private EditText campoSenha;
+    private EditText campoConfSenha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,9 @@ public class CadastrarActivity extends AppCompatActivity {
                 startActivity(voltarHome);
             }
         });
+
+        campoSenha = (EditText) findViewById(R.id.cadastrar_senha);
+        campoConfSenha = (EditText) findViewById(R.id.cadastrar_senhaConfir);
     }
 
     @Override
@@ -52,6 +58,12 @@ public class CadastrarActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.menu_cadastrar_confirma:
 
+                if(!isenhasMatch()){
+                    Toast.makeText(CadastrarActivity.this, "As senhas são diferentes", Toast.LENGTH_SHORT).show();
+
+                    break;
+                }
+
                 Usuario usuario = helper.getUsuario();
                 UsuarioDao dao = new UsuarioDao(this);
                 dao.insere(usuario);
@@ -65,5 +77,13 @@ public class CadastrarActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private boolean isenhasMatch() {
+
+        String senha =  campoSenha.getText().toString();
+        String confSenha = campoConfSenha.getText().toString();
+
+        return senha.equals(confSenha);
     }
 }
