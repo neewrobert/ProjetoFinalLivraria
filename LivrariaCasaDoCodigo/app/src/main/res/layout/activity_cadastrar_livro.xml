@@ -1,0 +1,73 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.casadocodigo.livrariacasadocodigo.CadastrarLivroActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/cadLivro_barraTarefas"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorBar"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="225dp">
+
+        <ImageView
+            android:id="@+id/cadLivro_foto"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_icone_bar"
+            android:background="@color/colorButton"/>
+
+        <Button
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/ic_menu_camera"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"/>
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/cadLivro_isbn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="ISBN" />
+
+    <EditText
+        android:id="@+id/cadLivro_Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Titulo do Livro" />
+    <EditText
+        android:id="@+id/cadLivro_SubTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sub Titulo"/>
+
+    <EditText
+        android:id="@+id/cadLivro_Edicao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ediçao"
+        />
+
+
+</android.widget.LinearLayout>
+</ScrollView>
