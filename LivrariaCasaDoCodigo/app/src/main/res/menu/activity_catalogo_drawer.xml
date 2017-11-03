@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_listarTodos"
+            android:icon="@drawable/ic_catalogo"
+            android:title="Listar Todos" />
+        <item
+            android:id="@+id/nav_listarCategoria"
+            android:icon="@drawable/ic_dados"
+            android:title="Listar por Categoria" />
+        <item
+            android:id="@+id/nav_pesquisar"
+            android:icon="@drawable/ic_search_"
+            android:title="Pesquisar Livros" />
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_icone_bar"
+            android:title="Tools" />
+    </group>
+
+</menu>

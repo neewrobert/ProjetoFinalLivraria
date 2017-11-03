@@ -22,11 +22,21 @@
         </activity>
         <activity
             android:name=".CadastrarActivity"
-            android:label="Cadastrar"></activity>
+            android:label="Cadastrar" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".CatalogoActivity"
+            android:label="@string/title_activity_catalogo"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.casadocodigo.livrariacasadocodigo.HomeActivity" />
+        </activity>
+        <activity android:name=".CadastrarLivroActivity"></activity>
     </application>
 
 </manifest>
