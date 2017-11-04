@@ -32,6 +32,7 @@
             android:background="@color/colorButton"/>
 
         <Button
+            android:id="@+id/cadLivro_btnFoto"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:background="@drawable/ic_menu_camera"
@@ -49,7 +50,7 @@
         android:hint="ISBN" />
 
     <EditText
-        android:id="@+id/cadLivro_Titulo"
+        android:id="@+id/cadLivro_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -62,11 +63,54 @@
         android:hint="Sub Titulo"/>
 
     <EditText
-        android:id="@+id/cadLivro_Edicao"
+        android:id="@+id/cadLivro_edicao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ediçao"
         />
+
+    <EditText
+        android:id="@+id/cadLivro_autor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Autor" />
+
+    <EditText
+        android:id="@+id/cadLivro_qtdPaginas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Quantidade de Paginas"/>
+
+    <EditText
+        android:id="@+id/cadLivro_ano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Ano de Publicacao"/>
+
+    <EditText
+        android:id="@+id/cadLivro_editora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Editora"/>
+
+    <TextView
+        android:id="@+id/cadLivro_lblCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:text="Categoria:"/>
+
+    <Spinner
+        android:id="@+id/cadLivros_categorias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog">
+
+    </Spinner>
+
+
 
 
 </android.widget.LinearLayout>

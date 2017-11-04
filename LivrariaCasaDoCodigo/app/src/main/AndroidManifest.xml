@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     package="br.com.casadocodigo.livrariacasadocodigo">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +13,19 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <provider
+            android:authorities="${applicationId}.provider"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+
+        </provider>
+
         <activity
             android:name=".LoginActivity"
             android:label="Login"
@@ -36,7 +52,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.casadocodigo.livrariacasadocodigo.HomeActivity" />
         </activity>
-        <activity android:name=".CadastrarLivroActivity"></activity>
+        <activity
+            android:name=".CadastrarLivroActivity"
+            android:label="Cadastrar Livro" />
+        <activity
+            android:name=".CadastrarCategoriaActivity"
+            android:label="Categoria"
+            android:parentActivityName=".CadastrarLivroActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.casadocodigo.livrariacasadocodigo.CadastrarLivroActivity" />
+        </activity>
     </application>
 
 </manifest>

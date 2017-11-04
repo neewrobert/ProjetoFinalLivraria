@@ -13,9 +13,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.List;
+
+import br.com.casadocodigo.livrariacasadocodigo.Adapter.LivrosAdapter;
+import br.com.casadocodigo.livrariacasadocodigo.Dao.LivroDao;
+import br.com.casadocodigo.livrariacasadocodigo.Entities.Livro;
 
 public class CatalogoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private ListView listaLivros;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +43,8 @@ public class CatalogoActivity extends AppCompatActivity
             }
         });
 
+        listaLivros = (ListView) findViewById(R.id.cat_ListaLivros);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -42,6 +53,23 @@ public class CatalogoActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        carregaLista();
+    }
+
+    private void carregaLista() {
+        LivroDao livroDao = new LivroDao(this);
+
+        List<Livro> livros = livroDao.getTodosLivros();
+        livroDao.close();
+
+        LivrosAdapter adapter = new LivrosAdapter(this, livros);
+        listaLivros.setAdapter(adapter);
+
     }
 
     @Override

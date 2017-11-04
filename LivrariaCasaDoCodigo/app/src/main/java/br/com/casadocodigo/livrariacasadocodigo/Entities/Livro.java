@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by nrdossantos on 03/11/2017.
  */
 
-public class Livro implements Serializable{
+public class Livro extends EntidadeBase{
 
 
     private Long id;
@@ -14,12 +14,22 @@ public class Livro implements Serializable{
     private String titulo;
     private String subTitulo;
     private String edicao;
-    private String autoR;
+    private String autor;
     private Long qtdPaginas;
     private Long ano;
     private String editora;
-    private Categoria categoria;
+    private Long idCategoria;
+    private String foto;
 
+
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
 
     public Long getId() {
         return id;
@@ -61,12 +71,12 @@ public class Livro implements Serializable{
         this.edicao = edicao;
     }
 
-    public String getAutoR() {
-        return autoR;
+    public String getAutor() {
+        return autor;
     }
 
-    public void setAutoR(String autoR) {
-        this.autoR = autoR;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     public Long getQtdPaginas() {
@@ -93,12 +103,12 @@ public class Livro implements Serializable{
         this.editora = editora;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public Long getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setIdCategoria(Long idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
 

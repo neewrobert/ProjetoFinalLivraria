@@ -12,6 +12,9 @@
     <ListView
         android:id="@+id/cat_ListaLivros"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content">
+
+
+    </ListView>
 
 </android.widget.RelativeLayout>
