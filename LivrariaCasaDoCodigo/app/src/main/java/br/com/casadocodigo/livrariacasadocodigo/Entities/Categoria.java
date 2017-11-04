@@ -1,15 +1,17 @@
 package br.com.casadocodigo.livrariacasadocodigo.Entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by nrdossantos on 03/11/2017.
  */
 
-class Categoria implements Serializable {
+public class Categoria extends EntidadeBase {
 
     private Long id;
     private String nome;
+
 
     public Long getId() {
         return id;
