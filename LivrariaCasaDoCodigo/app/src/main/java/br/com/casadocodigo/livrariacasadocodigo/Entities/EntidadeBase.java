@@ -8,5 +8,9 @@ import java.io.Serializable;
 
 public abstract class EntidadeBase  implements Serializable{
 
-    private Long id;
+    protected Long id;
+
+    public abstract Long getId();
+
+    public abstract void setId(Long id);
 }

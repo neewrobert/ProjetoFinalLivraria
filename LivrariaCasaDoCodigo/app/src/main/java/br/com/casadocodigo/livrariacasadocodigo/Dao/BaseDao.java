@@ -22,31 +22,34 @@ import br.com.casadocodigo.livrariacasadocodigo.Entities.EntidadeBase;
 public class BaseDao<T extends EntidadeBase> extends SQLiteOpenHelper {
 
     private final String TABLE_USUARIO = "Create table usuario (" +
-            "id INTERGER PRIMARY KEY," +
+            "id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nome TEXT NOT NULL," +
             "email TEXT NOT NULL," +
             "senha TEXT NOT NULL);";
 
     private static final String TABLE_CATEGORIA = "CREATE TABLE categoria (" +
-            "id INTERGER PRIMARY KEY," +
+            "id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nome TEXT NOT NULL); ";
 
     private static  final String TABELA_lIVRO = "CREATE TABLE livro (" +
-            "id INTERGER PRIMARY KEY," +
+            "id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "isbn LONG NOT NULL," +
             "titulo TEXT NOT NULL," +
             "subTitulo TEXT," +
             "edicao TEXT," +
             "autor TEXT," +
-            "qtdPaginas INTERGER," +
-            "ano INTERGER," +
-            "idCategoria INTERGER," +
+            "qtdPaginas INTEGER," +
+            "ano INTEGER," +
+            "idCategoria INTEGER," +
             "foto TEXT);";
 
     private static final String ALTER_TAB_LIVRO = "ALTER TABLE livro ADD COLUMN editora TEXT";
+    private static final String DROP_CATEGORIA = "DROP TABLE IF EXISTS categoria;";
+    private static final String DROP_LIVRO = "DROP TABLE IF EXISTS livro;";
+    private static final String DROP_USARIO = "DROP TABLE IF EXISTS usuario;";
 
     public BaseDao(Context context) {
-        super(context, "CasaDoCodigo", null, 4);
+        super(context, "CasaDoCodigo", null, 5);
     }
 
     @Override
@@ -68,6 +71,15 @@ public class BaseDao<T extends EntidadeBase> extends SQLiteOpenHelper {
                 db.execSQL(TABELA_lIVRO);
             case 3:
                 db.execSQL(ALTER_TAB_LIVRO);
+            case 4:
+                db.execSQL(DROP_CATEGORIA);
+                db.execSQL(DROP_LIVRO);
+                db.execSQL(DROP_USARIO);
+                db.execSQL(TABLE_USUARIO);
+                db.execSQL(TABLE_CATEGORIA);
+                db.execSQL(TABELA_lIVRO);
+                db.execSQL(ALTER_TAB_LIVRO);
+
         }
     }
 
@@ -90,7 +102,7 @@ public class BaseDao<T extends EntidadeBase> extends SQLiteOpenHelper {
 
         Class<?> clazz = t.getClass();
         Field fields[] = clazz.getDeclaredFields();
-        String[] params = {};
+        String[] params = new String[1];
 
         try {
             for (Field field : fields) {
