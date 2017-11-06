@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.Collections;
@@ -24,17 +25,18 @@ import br.com.casadocodigo.livrariacasadocodigo.R;
 
 public class CadastrarLivroHelper {
 
-    private final EditText campoIsbn;
-    private final EditText campoTitulo;
-    private final EditText campoSubTitulo;
-    private final EditText campoEdicao;
-    private final EditText campoAutor;
-    private final EditText campoQtdPaginas;
-    private final EditText campoAno;
-    private final EditText campoEditora;
-    private final Spinner campoCategoria;
-    private final ImageView campoFoto;
+    private  EditText campoIsbn;
+    private  EditText campoTitulo;
+    private  EditText campoSubTitulo;
+    private  EditText campoEdicao;
+    private  EditText campoAutor;
+    private  EditText campoQtdPaginas;
+    private  EditText campoAno;
+    private  EditText campoEditora;
+    private  Spinner campoCategoria;
+    private  ImageView campoFoto;
     private Livro livro;
+
 
     private List<Categoria> categorias;
 
@@ -57,13 +59,18 @@ public class CadastrarLivroHelper {
     }
 
     public Livro getLivro() {
-        livro.setIsbn(Long.parseLong(campoIsbn.getText().toString()));
+
+
+        String isbn = campoIsbn.getText().toString();
+        livro.setIsbn(isbn.equals("") ? 0 : Long.parseLong(isbn));
         livro.setTitulo(campoTitulo.getText().toString());
         livro.setSubTitulo(campoSubTitulo.getText().toString());
         livro.setEdicao(campoEdicao.getText().toString());
         livro.setAutor(campoAutor.getText().toString());
-        livro.setQtdPaginas(Long.parseLong(campoQtdPaginas.getText().toString()));
-        livro.setAno(Long.parseLong(campoAno.getText().toString()));
+        String qtdPaginas = campoQtdPaginas.getText().toString();
+        livro.setQtdPaginas(qtdPaginas.equals("") ? 0 : Long.parseLong(qtdPaginas));
+        String ano = campoAno.getText().toString();
+        livro.setAno(ano.equals("") ? 0 : Long.parseLong(ano));
         livro.setEditora(campoEditora.getText().toString());
         livro.setFoto((String) campoFoto.getTag());
         livro.setIdCategoria(campoCategoria.getSelectedItemId());
@@ -72,12 +79,13 @@ public class CadastrarLivroHelper {
 
     }
 
+
     public void associarImagem(String caminhoFoto) throws fotoApagadaException {
 
         if(new File(caminhoFoto).exists()){
             if (caminhoFoto != null && !caminhoFoto.equals("")){
                 Bitmap bitmap = BitmapFactory.decodeFile(caminhoFoto);
-                Bitmap bitmapReduzido = Bitmap.createScaledBitmap(bitmap, 350, 300, true );
+                Bitmap bitmapReduzido = Bitmap.createScaledBitmap(bitmap, 450, 300, true );
                 campoFoto.setImageBitmap(bitmapReduzido);
                 campoFoto.setScaleType(ImageView.ScaleType.FIT_XY);
                 campoFoto.setTag(caminhoFoto);

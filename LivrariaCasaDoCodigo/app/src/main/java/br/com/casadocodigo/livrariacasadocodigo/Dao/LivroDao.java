@@ -36,14 +36,17 @@ public class LivroDao extends BaseDao<Livro> {
             livro.setTitulo(c.getString(c.getColumnIndex("titulo")));
             livro.setSubTitulo(c.getString(c.getColumnIndex("subTitulo")));
             livro.setEdicao(c.getString(c.getColumnIndex("edicao")));
-            livro.setAutor(c.getString(c.getColumnIndex("ano")));
+            livro.setAutor(c.getString(c.getColumnIndex("autor")));
             livro.setQtdPaginas(c.getLong(c.getColumnIndex("qtdPaginas")));
             livro.setEditora(c.getString(c.getColumnIndex("editora")));
+            livro.setAno(c.getLong(c.getColumnIndex("ano")));
             livro.setIdCategoria(c.getLong(c.getColumnIndex("idCategoria")));
             livro.setFoto(c.getString(c.getColumnIndex("foto")));
 
             livros.add(livro);
         }
+        c.close();
+        db.close();
         return livros;
     }
 }

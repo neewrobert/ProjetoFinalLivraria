@@ -58,7 +58,7 @@ public class CadastrarActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.menu_cadastrar_confirma:
 
-                if(!isenhasMatch()){
+                if(!senhasMatch()){
                     Toast.makeText(CadastrarActivity.this, "As senhas são diferentes", Toast.LENGTH_SHORT).show();
 
                     break;
@@ -79,7 +79,7 @@ public class CadastrarActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private boolean isenhasMatch() {
+    private boolean senhasMatch() {
 
         String senha =  campoSenha.getText().toString();
         String confSenha = campoConfSenha.getText().toString();

@@ -176,6 +176,8 @@ public class CadastrarLivroActivity extends AppCompatActivity {
                 Toast.makeText(this, "Livro: " + livro.getTitulo() + "Salvo!", Toast.LENGTH_SHORT).show();
                 finish();
 
+                onBackPressed();
+
                 break;
 
             case R.id.menu_cadLivro_NovaCat:

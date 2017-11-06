@@ -3,7 +3,7 @@ package br.com.casadocodigo.livrariacasadocodigo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,18 +13,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
 import br.com.casadocodigo.livrariacasadocodigo.Adapter.LivrosAdapter;
 import br.com.casadocodigo.livrariacasadocodigo.Dao.LivroDao;
 import br.com.casadocodigo.livrariacasadocodigo.Entities.Livro;
+import br.com.casadocodigo.livrariacasadocodigo.Fragment.ListaPorCategoriaFragment;
+import br.com.casadocodigo.livrariacasadocodigo.Fragment.ListaTodosFragment;
 
 public class CatalogoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ListView listaLivros;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +48,7 @@ public class CatalogoActivity extends AppCompatActivity
             }
         });
 
-        listaLivros = (ListView) findViewById(R.id.cat_ListaLivros);
+        //listaLivros = (ListView) findViewById(R.id.cat_ListaLivros);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -51,17 +56,17 @@ public class CatalogoActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        carregaLista();
+
     }
 
-    private void carregaLista() {
+    private void carregaListaTodos() {
         LivroDao livroDao = new LivroDao(this);
 
         List<Livro> livros = livroDao.getTodosLivros();
@@ -110,11 +115,19 @@ public class CatalogoActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        switch (id){
-            case R.id.nav_listarTodos:
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+
+        if(id == R.id.nav_listarTodos) {
 
 
+            fragmentManager.beginTransaction().replace(R.id.content_frame,  new ListaTodosFragment()).commit();
+
+
+
+        } else if (id == R.id.nav_listarCategoria ){
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new ListaPorCategoriaFragment()).commit();
         }
+
 
 
 
