@@ -55,8 +55,19 @@ public class CadastrarLivroActivity extends AppCompatActivity {
         barraTarefas.setLogo(R.drawable.ic_icone_bar);
         setSupportActionBar(barraTarefas);
 
-        helper = new CadastrarLivroHelper(this);
+        helper = new CadastrarLivroHelper(this, this);
         campoCategoria = (Spinner) findViewById(R.id.cadLivros_categorias);
+
+        Intent intent = getIntent();
+        Livro livro = (Livro) intent.getSerializableExtra("livro");
+        if (livro != null){
+            try {
+                helper.preencheFormulario(livro);
+            } catch (fotoApagadaException e){
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+
 
 
         /**
@@ -175,6 +186,8 @@ public class CadastrarLivroActivity extends AppCompatActivity {
 
                 Toast.makeText(this, "Livro: " + livro.getTitulo() + "Salvo!", Toast.LENGTH_SHORT).show();
                 finish();
+
+                onBackPressed();
 
                 break;
 

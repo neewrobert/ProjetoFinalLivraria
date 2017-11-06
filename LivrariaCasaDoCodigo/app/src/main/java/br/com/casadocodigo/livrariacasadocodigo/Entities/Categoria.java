@@ -13,9 +13,10 @@ public class Categoria extends EntidadeBase {
     private String nome;
 
 
+
     public Long getId() {
         return id;
-    }
+}
 
     public void setId(Long id) {
         this.id = id;

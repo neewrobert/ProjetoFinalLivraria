@@ -41,29 +41,6 @@
             android:paddingLeft="10dp"
             android:paddingTop="10dp"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="50dp">
-
-            <Button
-                android:id="@+id/listview_btnEditar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Editar"
-                />
-            <Button
-                android:id="@+id/listview_btnExcluir"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Excluir"
-                />
-
-        </LinearLayout>
-
     </LinearLayout>
 
 
