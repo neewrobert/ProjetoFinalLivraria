@@ -72,27 +72,27 @@ public class LivrosAdapter extends BaseAdapter {
         ImageView campoFoto = (ImageView) view.findViewById(R.id.listview_foto);
         String caminhoFoto = livro.getFoto();
 
-        Button btnExcluir =  view.findViewById(R.id.listview_btnExcluir);
-        btnExcluir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final LivroDao dao = new LivroDao(context);
-
-                new AlertDialog.Builder(context)
-                        .setTitle("Deletar Livro")
-                        .setMessage("Voce deseja deletar o livro: " + livro.getTitulo() + " ?")
-                        .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                                dao.delete(livro);
-                                dao.close();
-                                Toast.makeText(context, "Livro " + livro.getTitulo() + " Excluido", Toast.LENGTH_SHORT).show();
-                            }
-                        }).setNegativeButton("Nao", null).show();
-
-            }
-        });
+//        Button btnExcluir =  view.findViewById(R.id.listview_btnExcluir);
+//        btnExcluir.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                final LivroDao dao = new LivroDao(context);
+//
+//                new AlertDialog.Builder(context)
+//                        .setTitle("Deletar Livro")
+//                        .setMessage("Voce deseja deletar o livro: " + livro.getTitulo() + " ?")
+//                        .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//
+//                                dao.delete(livro);
+//                                dao.close();
+//                                Toast.makeText(context, "Livro " + livro.getTitulo() + " Excluido", Toast.LENGTH_SHORT).show();
+//                            }
+//                        }).setNegativeButton("Nao", null).show();
+//
+//            }
+//        });
 
         if (caminhoFoto != null && new File(caminhoFoto).exists()) {
             Bitmap bitmap = BitmapFactory.decodeFile(caminhoFoto);

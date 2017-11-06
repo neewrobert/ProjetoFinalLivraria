@@ -118,11 +118,7 @@ public class CatalogoActivity extends AppCompatActivity
         android.app.FragmentManager fragmentManager = getFragmentManager();
 
         if(id == R.id.nav_listarTodos) {
-
-
             fragmentManager.beginTransaction().replace(R.id.content_frame,  new ListaTodosFragment()).commit();
-
-
 
         } else if (id == R.id.nav_listarCategoria ){
             fragmentManager.beginTransaction().replace(R.id.content_frame, new ListaPorCategoriaFragment()).commit();
