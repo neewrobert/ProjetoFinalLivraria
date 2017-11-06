@@ -115,29 +115,7 @@ public class ListaPorCategoriaFragment extends android.app.Fragment implements A
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
-    private int posicaoArray(List<Categoria> categorias, int idCategoria) {
-        int posicao = 0;
-        CategoriaDao categoriaDao = new CategoriaDao(viewListaPorCategoria.getContext());
-        Categoria categoria = categoriaDao.getCategoriaById(idCategoria);
-
-
-        if (categoria != null) {
-            for (int i = 0; i <= categorias.size() - 1; i++){
-
-                if (categorias.get(i).equals(categoria)){
-                    posicao = i;
-                    break;
-                } else {
-                    posicao = 0;
-                }
-            }
-        } else {
-            posicao = 0;
-        }
-
-        return posicao;
-    }
+    
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
