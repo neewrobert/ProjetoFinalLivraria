@@ -23,6 +23,7 @@ import java.util.List;
 import br.com.casadocodigo.livrariacasadocodigo.Adapter.LivrosAdapter;
 import br.com.casadocodigo.livrariacasadocodigo.Dao.LivroDao;
 import br.com.casadocodigo.livrariacasadocodigo.Entities.Livro;
+import br.com.casadocodigo.livrariacasadocodigo.Fragment.BuscarLivroFragment;
 import br.com.casadocodigo.livrariacasadocodigo.Fragment.ListaPorCategoriaFragment;
 import br.com.casadocodigo.livrariacasadocodigo.Fragment.ListaTodosFragment;
 
@@ -127,6 +128,8 @@ public class CatalogoActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_listarCategoria ){
             fragmentManager.beginTransaction().replace(R.id.content_frame, new ListaPorCategoriaFragment()).commit();
+        } else if (id == R.id.nav_pesquisar){
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new BuscarLivroFragment()).commit();
         }
 
 

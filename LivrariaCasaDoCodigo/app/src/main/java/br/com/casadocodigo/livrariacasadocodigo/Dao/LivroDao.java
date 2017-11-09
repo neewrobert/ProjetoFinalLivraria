@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import br.com.casadocodigo.livrariacasadocodigo.Entities.Livro;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -82,5 +83,81 @@ public class LivroDao extends BaseDao<Livro> {
         c.close();
         db.close();
         return livros;
+    }
+
+    public List<Livro> pesquisarAutorTitulo(String valorBusca) {
+
+        List<Livro> livros = new ArrayList<Livro>();
+        SQLiteDatabase db = getWritableDatabase();
+
+        String params[] = {valorBusca};
+        String coluns[] = {"id", "isbn", "titulo", "subTitulo", "edicao", "autor", "qtdPaginas", "editora", "ano", "idCategoria", "foto"};
+        String clause = "titulo = ?";
+        Cursor c = db.query("livro", coluns, clause, params, null, null, null, null);
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                Livro livro = new Livro();
+
+                livro.setId(c.getLong(c.getColumnIndex("id")));
+                livro.setIsbn(c.getLong(c.getColumnIndex("isbn")));
+                livro.setTitulo(c.getString(c.getColumnIndex("titulo")));
+                livro.setSubTitulo(c.getString(c.getColumnIndex("subTitulo")));
+                livro.setEdicao(c.getString(c.getColumnIndex("edicao")));
+                livro.setAutor(c.getString(c.getColumnIndex("autor")));
+                livro.setQtdPaginas(c.getLong(c.getColumnIndex("qtdPaginas")));
+                livro.setEditora(c.getString(c.getColumnIndex("editora")));
+                livro.setAno(c.getLong(c.getColumnIndex("ano")));
+                livro.setIdCategoria(c.getLong(c.getColumnIndex("idCategoria")));
+                livro.setFoto(c.getString(c.getColumnIndex("foto")));
+
+                livros.add(livro);
+            }
+        }
+        c.close();
+        db.close();
+
+        livros.addAll(buscaAutor(valorBusca));
+
+        return  livros;
+
+
+    }
+
+    private Collection<? extends Livro> buscaAutor(String valorBusca) {
+
+        List<Livro> livros = new ArrayList<Livro>();
+        SQLiteDatabase db = getWritableDatabase();
+
+        String params[] = {valorBusca};
+        String coluns[] = {"id", "isbn", "titulo", "subTitulo", "edicao", "autor", "qtdPaginas", "editora", "ano", "idCategoria", "foto"};
+        String clause = "autor = ?";
+        Cursor c = db.query("livro", coluns, clause, params, null, null, null, null);
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                Livro livro = new Livro();
+
+                livro.setId(c.getLong(c.getColumnIndex("id")));
+                livro.setIsbn(c.getLong(c.getColumnIndex("isbn")));
+                livro.setTitulo(c.getString(c.getColumnIndex("titulo")));
+                livro.setSubTitulo(c.getString(c.getColumnIndex("subTitulo")));
+                livro.setEdicao(c.getString(c.getColumnIndex("edicao")));
+                livro.setAutor(c.getString(c.getColumnIndex("autor")));
+                livro.setQtdPaginas(c.getLong(c.getColumnIndex("qtdPaginas")));
+                livro.setEditora(c.getString(c.getColumnIndex("editora")));
+                livro.setAno(c.getLong(c.getColumnIndex("ano")));
+                livro.setIdCategoria(c.getLong(c.getColumnIndex("idCategoria")));
+                livro.setFoto(c.getString(c.getColumnIndex("foto")));
+
+                livros.add(livro);
+            }
+        }
+        c.close();
+        db.close();
+
+
+        return  livros;
+
     }
 }
