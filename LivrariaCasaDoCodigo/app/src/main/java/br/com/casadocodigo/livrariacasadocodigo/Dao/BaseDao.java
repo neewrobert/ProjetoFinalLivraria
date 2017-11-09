@@ -41,6 +41,7 @@ public class BaseDao<T extends EntidadeBase> extends SQLiteOpenHelper {
             "qtdPaginas INTEGER," +
             "ano INTEGER," +
             "idCategoria INTEGER," +
+            "editora TEXT," +
             "foto TEXT);";
 
     private static final String ALTER_TAB_LIVRO = "ALTER TABLE livro ADD COLUMN editora TEXT";
@@ -49,7 +50,7 @@ public class BaseDao<T extends EntidadeBase> extends SQLiteOpenHelper {
     private static final String DROP_USARIO = "DROP TABLE IF EXISTS usuario;";
 
     public BaseDao(Context context) {
-        super(context, "CasaDoCodigo", null, 5);
+        super(context, "CasaDoCodigo", null, 1);
     }
 
     @Override
@@ -64,23 +65,7 @@ public class BaseDao<T extends EntidadeBase> extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        switch (oldVersion){
-            case 1:
-                db.execSQL(TABLE_CATEGORIA);
-            case 2:
-                db.execSQL(TABELA_lIVRO);
-            case 3:
-                db.execSQL(ALTER_TAB_LIVRO);
-            case 4:
-                db.execSQL(DROP_CATEGORIA);
-                db.execSQL(DROP_LIVRO);
-                db.execSQL(DROP_USARIO);
-                db.execSQL(TABLE_USUARIO);
-                db.execSQL(TABLE_CATEGORIA);
-                db.execSQL(TABELA_lIVRO);
-                db.execSQL(ALTER_TAB_LIVRO);
 
-        }
     }
 
     public void insere(T t){

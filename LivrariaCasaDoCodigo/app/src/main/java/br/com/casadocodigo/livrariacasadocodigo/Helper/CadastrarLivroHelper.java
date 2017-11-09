@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.List;
@@ -76,7 +77,12 @@ public class CadastrarLivroHelper {
         livro.setEditora(campoEditora.getText().toString());
         livro.setFoto((String) campoFoto.getTag());
         Categoria categoria = (Categoria) campoCategoria.getSelectedItem();
-        livro.setIdCategoria(categoria.getId());
+        if(categoria == null){
+            Toast.makeText(context, "Voce deve cadastrar uma categoria", Toast.LENGTH_SHORT).show();
+        } else {
+            livro.setIdCategoria(categoria.getId());
+        }
+
 
         return livro;
 

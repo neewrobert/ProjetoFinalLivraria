@@ -29,6 +29,7 @@ public class BuscarLivroFragment extends android.app.Fragment {
     EditText campoBusca;
     ImageButton btnBuscar;
     List<Livro> livrosBuscados;
+    List<Livro> todosLivros;
 
 
     @Nullable
@@ -50,19 +51,35 @@ public class BuscarLivroFragment extends android.app.Fragment {
                 LivroDao livroDao = new LivroDao(viewBuscaLivros.getContext());
 
                 String valorBusca;
-                if (campoBusca.getText() != null && !campoBusca.getText().toString().equals("")){
-                    valorBusca = campoBusca.getText().toString();
+                if (campoBusca.getText() != null && !campoBusca.getText().toString().trim().equals("")){
+                    valorBusca = campoBusca.getText().toString().toLowerCase();
 
-                    livrosBuscados = livroDao.pesquisarAutorTitulo(valorBusca);
-
-                    if(livrosBuscados.isEmpty()){
+                    todosLivros = livroDao.getTodosLivros();
+                    livrosBuscados = new ArrayList<>();
+                    if(todosLivros.isEmpty()){
                         carregaListaVazia();
-                        Toast.makeText(viewBuscaLivros.getContext(), "Nao encontrado", Toast.LENGTH_SHORT).show();
                     } else {
-                        carregaListaBuscados(livrosBuscados);
+
+                        for (Livro livro : todosLivros) {
+
+                            if (livro.getTitulo().toLowerCase().contains(valorBusca) || livro.getAutor().toLowerCase().contains(valorBusca)){
+                                livrosBuscados.add(livro);
+                            }
+
+                        }
+
+                        if (livrosBuscados.isEmpty()){
+                            carregaListaVazia();
+                            Toast.makeText(viewBuscaLivros.getContext(), "Nenhum Livro encontrado", Toast.LENGTH_SHORT).show();
+                        }else {
+                            carregaListaBuscados(livrosBuscados);
+                        }
+
                     }
 
 
+                }else {
+                    Toast.makeText(viewBuscaLivros.getContext(), "Campo de busca em branco", Toast.LENGTH_SHORT).show();
                 }
 
 

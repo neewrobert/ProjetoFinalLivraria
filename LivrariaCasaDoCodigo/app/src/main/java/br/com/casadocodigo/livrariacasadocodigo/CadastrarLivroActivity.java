@@ -176,6 +176,10 @@ public class CadastrarLivroActivity extends AppCompatActivity {
                 Livro livro = helper.getLivro();
                 LivroDao livroDao = new LivroDao(this);
 
+                if(livro.getIdCategoria() == null ){
+                    break;
+                }
+
                 if(livro.getId() != null ){
                     livroDao.update(livro);
                 } else {
