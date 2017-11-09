@@ -21,6 +21,8 @@ import android.widget.Toast;
 import java.util.List;
 
 import br.com.casadocodigo.livrariacasadocodigo.Adapter.LivrosAdapter;
+import br.com.casadocodigo.livrariacasadocodigo.CadastrarActivity;
+import br.com.casadocodigo.livrariacasadocodigo.CadastrarCategoriaActivity;
 import br.com.casadocodigo.livrariacasadocodigo.CadastrarLivroActivity;
 import br.com.casadocodigo.livrariacasadocodigo.Dao.CategoriaDao;
 import br.com.casadocodigo.livrariacasadocodigo.Dao.LivroDao;
@@ -90,7 +92,24 @@ public class ListaPorCategoriaFragment extends android.app.Fragment implements A
         super.onResume();
         Categoria categoria = (Categoria) campoCategoria.getSelectedItem();
 
-        carregaListaPorCategoria(categoria.getId());
+        if(categoria != null){
+            carregaListaPorCategoria(categoria.getId());
+        } else{
+            carregaSpinner();
+
+            new AlertDialog.Builder(viewListaPorCategoria.getContext())
+                    .setTitle("Nenhuma Categoria Cadastrada")
+                    .setMessage("Deseja cadastrar uma nova categoria: ?")
+                    .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intentCadastrarCategoria =  new Intent(getActivity(), CadastrarCategoriaActivity.class);
+                            startActivity(intentCadastrarCategoria);
+                        }
+
+                    }).setNegativeButton("Nao", null).show();
+        }
+
     }
 
     @Override
@@ -99,8 +118,6 @@ public class ListaPorCategoriaFragment extends android.app.Fragment implements A
         Categoria categoria = (Categoria) campoCategoria.getSelectedItem();
 
         carregaListaPorCategoria(categoria.getId());
-
-
 
     }
 
