@@ -23,6 +23,7 @@ public class Livro extends EntidadeBase{
 
 
 
+
     public String getFoto() {
         return foto;
     }

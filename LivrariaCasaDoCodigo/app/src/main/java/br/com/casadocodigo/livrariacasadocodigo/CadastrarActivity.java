@@ -81,8 +81,8 @@ public class CadastrarActivity extends AppCompatActivity {
 
     private boolean senhasMatch() {
 
-        String senha =  campoSenha.getText().toString();
-        String confSenha = campoConfSenha.getText().toString();
+        String senha =  campoSenha.getText().toString().trim();
+        String confSenha = campoConfSenha.getText().toString().trim();
 
         return senha.equals(confSenha);
     }

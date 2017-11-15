@@ -110,6 +110,5 @@ public class BuscarLivroFragment extends android.app.Fragment {
         LivrosAdapter adapter = new LivrosAdapter(viewBuscaLivros.getContext(), livros);
         listaLivros.setAdapter(adapter);
 
-
     }
 }

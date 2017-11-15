@@ -97,7 +97,6 @@ public class CadastrarLivroHelper {
                     Bitmap bitmap = BitmapFactory.decodeFile(caminhoFoto);
                     Bitmap bitmapReduzido = Bitmap.createScaledBitmap(bitmap, 450, 300, true);
                     campoFoto.setImageBitmap(bitmapReduzido);
-                    campoFoto.setScaleType(ImageView.ScaleType.FIT_XY);
                     campoFoto.setTag(caminhoFoto);
                 }
             } else {
