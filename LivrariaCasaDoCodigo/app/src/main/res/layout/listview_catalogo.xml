@@ -30,6 +30,14 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:paddingLeft="10dp"/>
+        <TextView
+            android:id="@+id/listview_Subtitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Titulo"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"/>
 
         <TextView
             android:id="@+id/listview_autor"
@@ -38,7 +46,7 @@
             android:text="Autor"
             android:textSize="15sp"
             android:paddingLeft="10dp"
-            android:paddingTop="10dp"/>
+            android:paddingTop="1dp"/>
 
     </LinearLayout>
 

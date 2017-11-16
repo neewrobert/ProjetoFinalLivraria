@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.casadocodigo.livrariacasadocodigo.AdministracaoActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/adm_barraTarefas"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorBar"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+<LinearLayout
+        android:id="@+id/linear"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top">
+
+        <EditText
+            android:id="@+id/adm_txtPesquisa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Pesquisar Livro por Titulo, Autor..."
+            android:layout_gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/adm_btnPesquisar"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_search"/>
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/adm_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="3dp"
+        android:layout_weight="1"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="3dp"
+        android:layout_gravity="center_horizontal">
+
+        <ImageButton
+            android:id="@+id/adm_btnNovo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Novo Livro"
+            android:src="@android:drawable/ic_menu_add"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"/>
+
+        <ImageButton
+            android:src="@android:drawable/ic_input_delete"
+            android:id="@+id/adm_btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Home"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"/>/>
+    </LinearLayout>
+</android.widget.LinearLayout>

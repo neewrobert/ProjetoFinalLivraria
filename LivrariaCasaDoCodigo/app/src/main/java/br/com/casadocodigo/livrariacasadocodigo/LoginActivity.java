@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                 } else {
-                    Toast toast = Toast.makeText(LoginActivity.this, "Usuario nao cadastrado", Toast.LENGTH_SHORT );
+                    Toast toast = Toast.makeText(LoginActivity.this, "Usuario nao cadastrado ou senha inválida", Toast.LENGTH_SHORT );
                     toast.show();
                 }
 
@@ -86,5 +86,36 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+        TextView btnEsqueciSenha = (TextView) findViewById(R.id.login_linkEsqueci);
+        btnEsqueciSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, MudarSenhaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnSair =  (Button) findViewById(R.id.longin_btnSair);
+        btnSair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |    Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.putExtra("SAIR", true);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+    }
+
+    @Override
+    protected void onResume() {
+
+        if(getIntent().getBooleanExtra("SAIR", false)){
+            finish();
+        }
+        super.onResume();
     }
 }

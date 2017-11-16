@@ -41,6 +41,38 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
+        Button btnAdm = (Button) findViewById(R.id.adm_btnAlterarSenhadmDados);
+        btnAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, AdministracaoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnSenha = (Button) findViewById(R.id.adm_btnAlterarSenha);
+        btnSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, MudarSenhaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnSair = (Button) findViewById(R.id.adm_btnSair);
+        btnSair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |    Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.putExtra("SAIR", true);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+
     }
 
 }
