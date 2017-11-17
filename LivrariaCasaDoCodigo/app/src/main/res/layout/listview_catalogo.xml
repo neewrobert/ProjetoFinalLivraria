@@ -34,7 +34,7 @@
             android:id="@+id/listview_Subtitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Titulo"
+            android:text="SubTitulo"
             android:textSize="15sp"
             android:textStyle="bold"
             android:paddingLeft="10dp"/>

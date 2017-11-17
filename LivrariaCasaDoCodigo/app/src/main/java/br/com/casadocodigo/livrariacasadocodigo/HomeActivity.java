@@ -59,6 +59,15 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        Button btnSobre = (Button) findViewById(R.id.adm_btnSobreEquipe);
+        btnSobre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentSobre = new Intent(HomeActivity.this, SobreActivity.class);
+                startActivity(intentSobre);
+            }
+        });
+
         Button btnSair = (Button) findViewById(R.id.adm_btnSair);
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override

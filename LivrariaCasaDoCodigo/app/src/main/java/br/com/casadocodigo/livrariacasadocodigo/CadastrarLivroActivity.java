@@ -1,7 +1,6 @@
 package br.com.casadocodigo.livrariacasadocodigo;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Environment;
@@ -16,7 +15,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 
@@ -34,7 +32,7 @@ import br.com.casadocodigo.livrariacasadocodigo.Dao.CategoriaDao;
 import br.com.casadocodigo.livrariacasadocodigo.Dao.LivroDao;
 import br.com.casadocodigo.livrariacasadocodigo.Entities.Categoria;
 import br.com.casadocodigo.livrariacasadocodigo.Entities.Livro;
-import br.com.casadocodigo.livrariacasadocodigo.Exception.fotoApagadaException;
+import br.com.casadocodigo.livrariacasadocodigo.Exception.FotoApagadaException;
 import br.com.casadocodigo.livrariacasadocodigo.Helper.CadastrarLivroHelper;
 
 import static android.media.MediaRecorder.VideoSource.CAMERA;
@@ -63,7 +61,7 @@ public class CadastrarLivroActivity extends AppCompatActivity {
         if (livro != null){
             try {
                 helper.preencheFormulario(livro);
-            } catch (fotoApagadaException e){
+            } catch (FotoApagadaException e){
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
@@ -152,7 +150,7 @@ public class CadastrarLivroActivity extends AppCompatActivity {
 
             try {
                 helper.associarImagem(arquivoFoto.getAbsolutePath());
-            } catch (fotoApagadaException e){
+            } catch (FotoApagadaException e){
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }

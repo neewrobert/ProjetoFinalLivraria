@@ -4,13 +4,13 @@ package br.com.casadocodigo.livrariacasadocodigo.Exception;
  * Created by nrdossantos on 03/11/2017.
  */
 
-public class fotoApagadaException extends Exception {
+public class FotoApagadaException extends Exception {
 
-    public fotoApagadaException(String message) {
+    public FotoApagadaException(String message) {
         super(message);
     }
 
-    public fotoApagadaException(String message, Throwable cause) {
+    public FotoApagadaException(String message, Throwable cause) {
         super(message, cause);
     }
 }

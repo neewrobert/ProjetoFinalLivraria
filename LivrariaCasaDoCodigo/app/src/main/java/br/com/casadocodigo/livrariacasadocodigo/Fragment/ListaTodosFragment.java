@@ -19,6 +19,7 @@ import java.util.List;
 import br.com.casadocodigo.livrariacasadocodigo.Adapter.LivrosAdapter;
 import br.com.casadocodigo.livrariacasadocodigo.CadastrarLivroActivity;
 import br.com.casadocodigo.livrariacasadocodigo.Dao.LivroDao;
+import br.com.casadocodigo.livrariacasadocodigo.DetalheActivity;
 import br.com.casadocodigo.livrariacasadocodigo.Entities.Livro;
 import br.com.casadocodigo.livrariacasadocodigo.R;
 
@@ -40,6 +41,17 @@ public class ListaTodosFragment extends android.app.Fragment {
 
         carregaLista();
         registerForContextMenu(listaLivros);
+
+        listaLivros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Livro livro = (Livro) listaLivros.getItemAtPosition(position);
+                Intent verDetalhes = new Intent(view.getContext(), DetalheActivity.class);
+                verDetalhes.putExtra("livro", livro);
+                startActivity(verDetalhes);
+
+            }
+        });
 
 
         return viewListaTodos;

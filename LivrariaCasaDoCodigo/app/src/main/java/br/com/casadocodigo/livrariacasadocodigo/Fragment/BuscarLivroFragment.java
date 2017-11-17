@@ -1,10 +1,12 @@
 package br.com.casadocodigo.livrariacasadocodigo.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -15,6 +17,7 @@ import java.util.List;
 
 import br.com.casadocodigo.livrariacasadocodigo.Adapter.LivrosAdapter;
 import br.com.casadocodigo.livrariacasadocodigo.Dao.LivroDao;
+import br.com.casadocodigo.livrariacasadocodigo.DetalheActivity;
 import br.com.casadocodigo.livrariacasadocodigo.Entities.Livro;
 import br.com.casadocodigo.livrariacasadocodigo.R;
 
@@ -39,6 +42,17 @@ public class BuscarLivroFragment extends android.app.Fragment {
         viewBuscaLivros = inflater.inflate(R.layout.buscar_livros_layout, container, false);
         listaLivros = viewBuscaLivros.findViewById(R.id.buscar_listaAlunos);
         carregaLista();
+
+        listaLivros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Livro livro = (Livro) listaLivros.getItemAtPosition(position);
+                Intent verDetalhes = new Intent(view.getContext(), DetalheActivity.class);
+                verDetalhes.putExtra("livro", livro);
+                startActivity(verDetalhes);
+
+            }
+        });
 
         campoBusca =  (EditText) viewBuscaLivros.findViewById(R.id.buscar_campoBusca);
         btnBuscar = (ImageButton) viewBuscaLivros.findViewById(R.id.buscar_btnBusca);

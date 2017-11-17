@@ -109,6 +109,10 @@ public class CatalogoActivity extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.content_frame, new ListaPorCategoriaFragment()).commit();
         } else if (id == R.id.nav_pesquisar){
             fragmentManager.beginTransaction().replace(R.id.content_frame, new BuscarLivroFragment()).commit();
+        } else if (id == R.id.nav_home){
+            Intent intent = new Intent(CatalogoActivity.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
         }
 
 

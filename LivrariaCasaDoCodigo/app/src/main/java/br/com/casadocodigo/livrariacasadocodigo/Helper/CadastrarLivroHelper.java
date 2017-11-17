@@ -1,7 +1,6 @@
 package br.com.casadocodigo.livrariacasadocodigo.Helper;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.widget.ArrayAdapter;
@@ -17,7 +16,7 @@ import br.com.casadocodigo.livrariacasadocodigo.CadastrarLivroActivity;
 import br.com.casadocodigo.livrariacasadocodigo.Dao.CategoriaDao;
 import br.com.casadocodigo.livrariacasadocodigo.Entities.Categoria;
 import br.com.casadocodigo.livrariacasadocodigo.Entities.Livro;
-import br.com.casadocodigo.livrariacasadocodigo.Exception.fotoApagadaException;
+import br.com.casadocodigo.livrariacasadocodigo.Exception.FotoApagadaException;
 import br.com.casadocodigo.livrariacasadocodigo.R;
 
 /**
@@ -89,7 +88,7 @@ public class CadastrarLivroHelper {
     }
 
 
-    public void associarImagem(String caminhoFoto) throws fotoApagadaException {
+    public void associarImagem(String caminhoFoto) throws FotoApagadaException {
 
         if (caminhoFoto != null && !caminhoFoto.equals("")) {
             if (new File(caminhoFoto).exists()) {
@@ -100,14 +99,14 @@ public class CadastrarLivroHelper {
                     campoFoto.setTag(caminhoFoto);
                 }
             } else {
-                throw new fotoApagadaException("A foto foi movida ou apagada");
+                throw new FotoApagadaException("A foto foi movida ou apagada");
             }
         } else {
-            throw new fotoApagadaException("Sem foto cadastrada");
+            throw new FotoApagadaException("Sem foto cadastrada");
         }
     }
 
-    public void preencheFormulario(Livro livro) throws fotoApagadaException {
+    public void preencheFormulario(Livro livro) throws FotoApagadaException {
 
         this.livro = livro;
         String isbn = (livro.getIsbn() != null ? livro.getIsbn().toString() : "0");
@@ -129,7 +128,7 @@ public class CadastrarLivroHelper {
         campoEditora.setText(editora);
         try{
             associarImagem(livro.getFoto());
-        } catch (fotoApagadaException e){
+        } catch (FotoApagadaException e){
             throw e;
         }
         if (livro.getIdCategoria() != null){

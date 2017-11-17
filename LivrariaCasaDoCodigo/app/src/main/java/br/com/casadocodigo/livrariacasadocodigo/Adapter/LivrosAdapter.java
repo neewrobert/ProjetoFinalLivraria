@@ -67,7 +67,7 @@ public class LivrosAdapter extends BaseAdapter {
         campoTitulo.setText(livro.getTitulo());
 
         TextView campoSubTitulo = (TextView) view.findViewById(R.id.listview_Subtitulo);
-        campoTitulo.setText(livro.getSubTitulo());
+        campoSubTitulo.setText(livro.getSubTitulo());
 
         TextView campoAutor = (TextView) view.findViewById(R.id.listview_autor);
         campoAutor.setText(livro.getAutor());

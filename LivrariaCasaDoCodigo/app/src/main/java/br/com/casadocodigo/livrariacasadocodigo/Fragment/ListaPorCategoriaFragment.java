@@ -26,6 +26,7 @@ import br.com.casadocodigo.livrariacasadocodigo.CadastrarCategoriaActivity;
 import br.com.casadocodigo.livrariacasadocodigo.CadastrarLivroActivity;
 import br.com.casadocodigo.livrariacasadocodigo.Dao.CategoriaDao;
 import br.com.casadocodigo.livrariacasadocodigo.Dao.LivroDao;
+import br.com.casadocodigo.livrariacasadocodigo.DetalheActivity;
 import br.com.casadocodigo.livrariacasadocodigo.Entities.Categoria;
 import br.com.casadocodigo.livrariacasadocodigo.Entities.Livro;
 import br.com.casadocodigo.livrariacasadocodigo.R;
@@ -52,6 +53,17 @@ public class ListaPorCategoriaFragment extends android.app.Fragment implements A
 
 
         registerForContextMenu(listaLivros);
+
+        listaLivros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Livro livro = (Livro) listaLivros.getItemAtPosition(position);
+                Intent verDetalhes = new Intent(view.getContext(), DetalheActivity.class);
+                verDetalhes.putExtra("livro", livro);
+                startActivity(verDetalhes);
+
+            }
+        });
 
         carregaLista();
         carregaSpinner();

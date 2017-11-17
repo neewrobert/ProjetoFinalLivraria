@@ -65,15 +65,15 @@ public class BaseDao<T extends EntidadeBase> extends SQLiteOpenHelper {
 
     private static final String LIVRO_1 = "INSERT INTO livro " +
             "(id, isbn, titulo, subtitulo, edicao, autor, qtdPaginas, ano, idCategoria, editora) " +
-            "values (1, 9788532530783, 'Harry Potter', 'Pedra Filosofal', 1, 'JK Rowling', 208, 2009, 3, 'Rocco')";
+            "values (1, 9788532530783, 'Harry Potter Pedra Filosofal', 'Livro 1', 1, 'JK Rowling', 208, 2009, 3, 'Rocco')";
 
     private static final String LIVRO_2 = "INSERT INTO livro " +
             "(id, isbn, titulo, subtitulo, edicao, autor, qtdPaginas, ano, idCategoria, editora) " +
-            "values (2, 9788528622508, 'Harry Potter', 'Camara secreta', 1, 'JK Rowling', 196, 2014, 11, 'Rocco')";
+            "values (2, 9788528622508, 'Harry Potter Camara secreta', 'Livro 2', 1, 'JK Rowling', 196, 2014, 11, 'Rocco')";
 
     private static final String LIVRO_3 = "INSERT INTO livro " +
             "(id, isbn, titulo, subtitulo, edicao, autor, qtdPaginas, ano, idCategoria, editora) " +
-            "values (3, 9788561578725, 'Harry Potter', 'Principe de Azkaban', 2, 'JK Rowling', 210, 2016, 1, 'Rocco')";
+            "values (3, 9788561578725, 'Harry Potter Principe de Azkaban', 'Livro 3', 2, 'JK Rowling', 210, 2016, 1, 'Rocco')";
 
     private static final String USUARIO_DEFAULT = "INSERT INTO usuario (id, nome, email, senha) " +
             "values (1, 'administrador', 'admin', 'admin')";

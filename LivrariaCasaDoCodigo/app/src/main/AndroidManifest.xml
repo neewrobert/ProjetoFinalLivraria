@@ -62,11 +62,14 @@
         </activity>
         <activity
             android:name=".MudarSenhaActivity"
-            android:label="Alterar Senha"/>
-
+            android:label="Alterar Senha" />
         <activity
             android:name=".AdministracaoActivity"
-            android:label="Administração"></activity>
+            android:label="Administração" />
+        <activity android:name=".SobreActivity"
+            android:label="Sobre a Equipe"/>
+        <activity android:name=".DetalheActivity"
+            android:label="Detalhe do Livro"/>
     </application>
 
 </manifest>
